@@ -8,6 +8,7 @@ public class StudentMain {
 		System.out.println("프로그램 시작");
 		
 		//StudentController의 Start메서드 호출
+		//출력하는게 main의 일임
 
 		StudentController s1 = new StudentController();
 		

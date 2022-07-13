@@ -9,5 +9,6 @@ public class Student {
 	int math;
 	int total;
 	double avg;
+	Student string;
 
 }
