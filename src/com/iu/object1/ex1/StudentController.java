@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class StudentController {
 //Start 메서드 선언
+	Scanner sc;
+	//객체 생성
+	StudentService studentService;
+	StudentView sv;
+	Student [] students; 
 //	System.out.println("1. 학생 정보 입력");
 //	System.out.println("2. 학생 정보 조회");
 //	System.out.println("3. 학생 정보 검색");
@@ -12,14 +17,14 @@ public class StudentController {
 //	System.out.println("6. 프로그램 종료");
 	//controller에서 모든걸 연결해야함
 	
+	public StudentController() {
+		sc = new Scanner(System.in);
+		sv = new StudentView();
+		studentService = new StudentService();
+	}
 	public void Start() {
-		Scanner sc = new Scanner(System.in);
-		//객체 생성
 		boolean check = true;
-		Student [] students = null; 
-		StudentService ss = new StudentService();
 		StudentService count = new StudentService();
-		StudentView sv = new StudentView();
 		StudentSearch sch = new StudentSearch();
 		StudentDelete sd = new StudentDelete();
 		Student string = new Student();
@@ -35,7 +40,7 @@ public class StudentController {
 		int select = sc.nextInt();
 		if(select==1) {
 			System.out.println("1. 학생 정보 입력");
-			students = ss.makeStudents();			
+			students = studentService.makeStudents();			
 		}else if(select==2) {
 			System.out.println("2. 학생 정보 조회");
 			sv.view(students);
@@ -54,6 +59,8 @@ public class StudentController {
 			sd.delete(students);
 		}else if(select==5) {
 			System.out.println("5. 학생 정보 추가");
+			studentService.addStudent(students);
+			
 		
 		}else {
 			System.out.println("6. 프로그램 종료");

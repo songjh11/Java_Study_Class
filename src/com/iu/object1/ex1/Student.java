@@ -9,6 +9,14 @@ public class Student {
 	int math;
 	int total;
 	double avg;
-	Student string;
+	
+	public void setTotal() {
+		this.total = this.kor+this.eng+this.math;
+		this.setAvg();
+		System.out.println("");
+	}
 
+	public void setAvg() {
+		this.avg = this.total/3.0;
+	}
 }
