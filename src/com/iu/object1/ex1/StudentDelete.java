@@ -12,7 +12,7 @@ public class StudentDelete {
 		int num = sc.nextInt();
 		Student [] students2 = null;
 		for(int i=0; i<students.length; i++) {
-			if(num==students[i].num) {
+			if(num==students[i].getNum()) {
 				check=!check;
 				break;
 			} 

@@ -25,7 +25,7 @@ public class StudentController {
 	public void Start() {
 		boolean check = true;
 		StudentService count = new StudentService();
-		StudentSearch sch = new StudentSearch();
+		StudentService sch = new StudentService();
 		StudentDelete sd = new StudentDelete();
 		Student string = new Student();
 		
@@ -46,7 +46,7 @@ public class StudentController {
 			sv.view(students);
 			}else if(select==3) {
 			System.out.println("3. 학생 정보 검색");
-			Student student = sch.findStudent(students);
+			Student student = studentService.findStudent(students);
 			
 			if(student!=null) {
 				sv.view(student);
@@ -56,10 +56,11 @@ public class StudentController {
 			
 		}else if(select==4) {
 			System.out.println("4. 학생 정보 삭제");
-			sd.delete(students);
+			students=studentService.delete(students);
+			
 		}else if(select==5) {
 			System.out.println("5. 학생 정보 추가");
-			studentService.addStudent(students);
+			students=studentService.addStudent(students);
 			
 		
 		}else {

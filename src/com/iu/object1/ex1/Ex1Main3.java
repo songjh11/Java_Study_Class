@@ -12,11 +12,12 @@ public class Ex1Main3 {
 			Student st = new Student();	
 			students[i]=st;
 			System.out.println("이름 입력");
-			students[i].name=sc.next();//둘 다 됨
-			st.name = sc.next();//둘 다 됨
-					} System.out.println(students[0].name);
-		System.out.println(students[1].name);
-		System.out.println(students[2].name);
+			students[i].setName(sc.next());//둘 다 됨
+			st.setName(sc.next());//둘 다 됨
+					} System.out.println(students[0].getName());
+		System.out.println(students[1].getName());
+		System.out.println(students[2].getName()
+				);
 	}
 
 }
