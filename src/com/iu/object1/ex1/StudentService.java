@@ -18,13 +18,13 @@ public class StudentService {
 		int index=0;
 		System.out.println("학생 번호 입력");
 		int num = sc.nextInt();
-		Student [] students2 = new Student [students.length-1];
+		Student [] students2 = null;
 		for(int i=0; i<students.length; i++) {
 			if(num==students[i].getNum()) {
 				check=!check;
 				break;} 
 				if(check) {
-//					students2 = new Student [students.length-1];
+					students2 = new Student [students.length-1];
 					for(int j=0; j<students.length; j++) {
 						if(i==j) {
 							break;}
