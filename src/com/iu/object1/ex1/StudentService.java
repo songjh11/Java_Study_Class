@@ -15,34 +15,34 @@ public class StudentService {
 	
 	public Student[] delete(Student [] students) {
 		boolean check=false;
-		int index=0;
 		System.out.println("학생 번호 입력");
-		int num = sc.nextInt();
+		int num = sc.nextInt();//1
 		Student [] students2 = null;
-		for(int i=0; i<students.length; i++) {
+		int i=0;
+		for(i=0; i<students.length; i++) {
 			if(num==students[i].getNum()) {
 				check=!check;
-				break;} 
-				if(check) {
+				break;}
+		}
+					if(check) {
 					students2 = new Student [students.length-1];
+					int index=0;
 					for(int j=0; j<students.length; j++) {
-						if(i==j) {
-							break;}
+						if(j==i) {
+							continue;}
 						students2[index]=students[j];
 						index++;
-					}
-					
+						}					
 					students=students2;
-					break;
-					
-				}else {
+										}
+			
+			else {
 				System.out.println("해당 학생이 없습니다");
-				break;
-		}
-	}
-		return students;
-
-	}
+						}
+					return students;
+					}
+	
+	
 	
 	
 	

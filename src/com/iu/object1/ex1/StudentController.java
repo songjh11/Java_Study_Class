@@ -26,7 +26,6 @@ public class StudentController {
 		boolean check = true;
 		StudentService count = new StudentService();
 		StudentService sch = new StudentService();
-		StudentDelete sd = new StudentDelete();
 		Student string = new Student();
 		
 		
