@@ -15,27 +15,28 @@ public class StudentService {
 	
 	public Student[] delete(Student [] students) {
 		boolean check=false;
-		int index=0;
 		System.out.println("학생 번호 입력");
 		int num = sc.nextInt();
-		Student [] students2 = new Student [students.length-1];
+		Student [] students2 = null;
 		for(int i=0; i<students.length; i++) {
 			if(num==students[i].getNum()) {
 				check=!check;
+				System.out.println(check);
 				break;} 
-				if(check) {
-//					students2 = new Student [students.length-1];
+				if(check==true) {
+					int index=0;
+					students2 = new Student [students.length-1];
 					for(int j=0; j<students.length; j++) {
 						if(i==j) {
 							break;}
 						students2[index]=students[j];
 						index++;
 					}
-					
+					System.out.println(students2[students2.length-1].getName());
 					students=students2;
 					break;
 					
-				}else {
+				} else if(check==false) {
 				System.out.println("해당 학생이 없습니다");
 				break;
 		}
@@ -69,9 +70,6 @@ public class StudentService {
 				student.setTotal();
 				addSt[students.length]=student;
 				students = addSt;
-				System.out.println(students[0].getName());
-				System.out.println(students[1].getName());
-				System.out.println(students[2].getName());
 				return students;
 	}
 	
